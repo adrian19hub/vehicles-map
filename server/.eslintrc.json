@@ -1,0 +1,27 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "extends": [
+        "airbnb-base"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 13
+    },
+    "rules": {
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "indent":"off",
+        "consistent-return":"off",
+        "linebreak-style":"off",
+        "no-console":"off",
+        "func-names":"off",
+        "no-process-exit":"off",
+        "object-shorthand":"off",
+        "object-curly-newline":"off",
+        "class-methods-use-this":"off",
+        "no-trailing-spaces":"off",
+        "arrow-body-style":"off"
+    }
+}

@@ -1,0 +1,70 @@
+:root {
+  --main-color: rgb(0, 58, 92);
+  --secondary-color: rgb(245, 245, 245);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+
+header {
+  background-color:var(--main-color);
+  padding: 10px;
+}
+
+header h1 {
+  color: var(--secondary-color);
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.main-page {
+  height: 93vh;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.dashboard {
+  overflow:auto;
+  background-color:var(--secondary-color)
+} 
+
+
+.location-icon {
+  font-size:2rem;
+  color: var(--main-color)
+}
+
+.badge {
+  font-size:1rem;
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 96vh;
+}
+
+.cluster-marker {
+  display: flex;
+  background-color: var(--main-color);
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  max-width: 70px;
+  max-height: 70px;
+  min-width: 30px;
+  min-height: 30px;
+  z-index: 1;
+  color: var(--secondary-color);
+  font-size: medium;
+}
