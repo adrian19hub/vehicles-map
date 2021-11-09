@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable import/prefer-default-export */
 import { store } from '../../state/store';
 import { mapActions } from '../../state/slices/mapSlice';
