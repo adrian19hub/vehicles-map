@@ -1,16 +1,18 @@
 /* eslint-disable padded-blocks */
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
 import Dashboard from '../../features/Dashboard/Dashboard';
 import MapContainer from '../../features/Map/MapContainer';
 
+/**
+ * DESC: Component handling the main page of the application
+ * PROPS: none
+ */
 const MainPage = () => {
-  console.log('RENDER - main page');
     return (
-      <div className="main-page">
-        <Dashboard />
-        <MapContainer />
-      </div>
+        <div className="main-page">
+            <Dashboard />
+            <MapContainer />
+        </div>
     );
 };
 

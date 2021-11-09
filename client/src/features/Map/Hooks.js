@@ -25,28 +25,23 @@ const useVehiclePoints = () => {
     }, [vehiclesLocations]);
 };
 
-const useMarkers = (mapRef, supercluster) => {
+const useMarkers = () => {
     const clusters = useSelector((state) => state.map.ui.clusters);
 
     const getMarkers = useCallback(() => {
-      return clusters.map((cluster, index) => {
+        return clusters.map((cluster, index) => {
             const [longitude, latitude] = cluster.geometry.coordinates;
             const { cluster: isCluster, point_count: pointCount } = cluster.properties;
             return (
-              <Marker 
-                key={index}
-                lat={latitude}
-                lng={longitude}
-                count={isCluster ? pointCount : 0}
-                longitude={longitude}
-                latitude={latitude}
-                mapRef={mapRef}
-                cluster={cluster}
-                supercluster={supercluster}
-              />
+                <Marker 
+                    key={index}
+                    lat={latitude}
+                    lng={longitude}
+                    count={isCluster ? pointCount : 0}
+                />
             );
         });
-        }, [, clusters]);
+    }, [, clusters]);
     
     return getMarkers();
 };
@@ -67,11 +62,6 @@ const useDefaultData = (mapRef, mapConfig) => {
     }, [, mapRef]);
     return [zoom, center];
 };
-
-// const useMapRef = () => {
-//     const mapRef = useRef();
-
-// };
 
 export { useMarkers, useDefaultData };
 export default useVehiclePoints;

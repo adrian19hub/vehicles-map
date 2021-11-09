@@ -5,31 +5,26 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-const ClusterMarker = ({ count, mapRef, cluster, latitude, longitude, supercluster }) => {
-  const vehiclesPoints = useSelector((state) => state.map.ui.vehiclePoints);
+/**
+ * DESC: Component that displays the proper marker type
+ * PROPS: 
+ *    count: {Number} - The number of vehicles location for the cluster
+ */
+const ClusterMarker = ({ count }) => {
+    const vehiclesPoints = useSelector((state) => state.map.ui.vehiclePoints);
 
-  const clusterMarkerStyle = {
-    width: `${10 + (count / vehiclesPoints.length) * 5000}px`,
-    height: `${10 + (count / vehiclesPoints.length) * 5000}px`,
-  };
-
-  const handleClick = () => {
-    // const expansionZoom = Math.min(
-    //   supercluster.getClusterExpansionZoom(cluster.id), 
-    //   20,
-    // );
-    //   mapRef.current.setZoom(expansionZoom);
-    //   mapRef.current.panTo({ lat: latitude, lng: longitude });
-  };
+    const clusterMarkerStyle = {
+        width: `${10 + (count / vehiclesPoints.length) * 5000}px`,
+        height: `${10 + (count / vehiclesPoints.length) * 5000}px`,
+    };
 
     return (
-      <div
-        className="cluster-marker"
-        style={clusterMarkerStyle}
-        onClick={handleClick}
-      >
-        {count}
-      </div>
+        <div
+            className="cluster-marker"
+            style={clusterMarkerStyle}
+        >
+            {count}
+        </div>
     );
 };
 

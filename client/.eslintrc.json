@@ -19,7 +19,10 @@
     ],
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "indent":"off",
+        "react/jsx-indent":"off",
+        "react/jsx-indent-props":"off",
+        "indent":[1, 4],
+        "no-else-return":"warn",
         "consistent-return":"off",
         "linebreak-style":"off",
         "no-console":"off",
@@ -32,6 +35,7 @@
         "arrow-body-style":"off",
         "no-unused-vars":"off",
         "react/prop-types":"off",
-        "no-param-reassign":"off"
+        "no-param-reassign":"off",
+        "react/jsx-one-expression-per-line":"off"
     }
 }
