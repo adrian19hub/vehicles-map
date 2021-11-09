@@ -1,7 +1,11 @@
+/* eslint-disable import/no-cycle */
+/* eslint-disable no-sparse-arrays */
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable react/no-array-index-key */
-import React from 'react';
-import LocationMarker from './LocationMarker';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { mapActions } from '../../state/slices/mapSlice';
+import LocationMarker from './Markers/Marker';
 
 const generateLocationMarkers = (vehiclesLocations) => {
     return vehiclesLocations.map((vehicle, index) => {
@@ -9,15 +13,4 @@ const generateLocationMarkers = (vehiclesLocations) => {
     });
 };
 
-const generateVehiclePoints = (vehiclesLocations) => {
-    return vehiclesLocations.map((vehicle, index) => ({
-        type: 'Feature',
-        properties: {
-            cluster: false,
-            vehicleId: index,
-        },
-        geometry: { type: 'Point', coordinates: [vehicle.lng, vehicle.lat] },
-    }));
-};
-
-export { generateLocationMarkers, generateVehiclePoints };
+export { generateLocationMarkers };

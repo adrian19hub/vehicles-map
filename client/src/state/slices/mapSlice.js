@@ -1,10 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    vehiclesLocations: [],
-    selectedVehiclesIds: [],
-    loading: true,
-    selectingArea: false,
+    data: {
+        vehiclesLocations: [],
+        selectedVehiclesIds: [],
+        loading: true,
+    },
+    ui: {
+        selectingArea: false,
+        vehiclePoints: [],
+        clusters: [],
+        zoom: null,
+        bounds: null,
+    },
+    
 };
 
 const mapSlice = createSlice({
@@ -12,18 +21,30 @@ const mapSlice = createSlice({
     initialState,
     reducers: {
         getVehiclesLocations(state, action) {
-            state.vehiclesLocations = action.payload;
-            state.loading = false;
+            state.data.vehiclesLocations = action.payload;
+            state.data.loading = false;
         },
         getSelectedVehiclesIds(state, action) {
-            state.selectedVehiclesIds = action.payload;
+            state.data.selectedVehiclesIds = action.payload;
         },
         initSelectingArea(state) {
-            state.selectingArea = true;
+            state.ui.selectingArea = true;
         },
         disableSelectingArea(state) {
-            state.selectingArea = false;
-            state.selectedVehiclesIds = [];
+            state.ui.selectingArea = false;
+            state.data.selectedVehiclesIds = [];
+        },
+        setVehiclePoints(state, action) {
+            state.ui.vehiclePoints = action.payload;
+        },
+        setClusters(state, action) {
+            state.ui.clusters = action.payload;
+        },
+        setZoom(state, action) {
+            state.ui.zoom = action.payload;
+        },
+        setBounds(state, action) {
+            state.ui.bounds = action.payload;
         },
     },
 });

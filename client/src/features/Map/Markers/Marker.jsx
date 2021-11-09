@@ -2,28 +2,27 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 // eslint-disable-next-line import/no-unresolved
 import React from 'react';
-import { Icon } from '@iconify/react';
 import ClusterMarker from './ClusterMarker';
+import VehicleMarker from './VehicleMarker';
 
-const LocationMarker = ({ count, points, mapRef, supercluster, cluster, latitude, longitude }) => {
-    return (
-      <div className="location-marker">
-        {!count // if its not a cluster
-        ? <Icon icon="ant-design:car-filled" className="location-icon" /> // Signle car marker
+const Marker = ({ count, mapRef, cluster, latitude, longitude, supercluster }) => {
+  return (
+    <div className="location-marker">
+      {!count // if its not a cluster
+        ? <VehicleMarker />
         : (
           <ClusterMarker 
             count={count} 
-            points={points}
             mapRef={mapRef}
-            supercluster={supercluster}
             cluster={cluster}
             latitude={latitude}
             longitude={longitude}
+            supercluster={supercluster}
           />
           ) // Cluster marker
         }
-      </div>
+    </div>
     );
 };
 
-export default LocationMarker;
+export default Marker;

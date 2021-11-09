@@ -1,6 +1,7 @@
 :root {
-  --main-color: rgb(0, 58, 92);
-  --secondary-color: rgb(245, 245, 245);
+  --main-color: rgb(44, 44, 44);
+  --secondary-color: rgb(255, 255, 255);
+  --marker-color: rgb(170, 14, 0);
 }
 
 * {
@@ -12,7 +13,7 @@ body {
   overflow: hidden;
 }
 
-
+/* Header */
 header {
   background-color:var(--main-color);
   padding: 10px;
@@ -20,30 +21,51 @@ header {
 
 header h1 {
   color: var(--secondary-color);
-  padding: 0;
+  padding: 20px;
   margin: 0;
   text-align: center;
 }
 
+/* MainPage */
 .main-page {
   height: 93vh;
-  display: grid;
-  grid-template-columns: 1fr 4fr;
+  display: flex;
 }
 
+/* Dashboard */
 .dashboard {
+  flex: 20%;
+  display: flex;
+  flex-direction: column;
   overflow:auto;
   background-color:var(--secondary-color)
 } 
 
+.dashboard-header {
+  padding: 20px 10px 20px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  border-radius:0%;
+}
+
+.empty-list-message {
+  text-align: center;
+}
+
+
+/* Map */
+.map {
+  flex: 80%;
+}
 
 .location-icon {
   font-size:2rem;
   color: var(--main-color)
-}
-
-.badge {
-  font-size:1rem;
 }
 
 .loader {
@@ -56,7 +78,7 @@ header h1 {
 
 .cluster-marker {
   display: flex;
-  background-color: var(--main-color);
+  background-color: var(--marker-color);
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -64,7 +86,33 @@ header h1 {
   max-height: 70px;
   min-width: 30px;
   min-height: 30px;
-  z-index: 1;
   color: var(--secondary-color);
   font-size: medium;
+}
+
+
+/* Media queries */
+@media only screen and (max-width: 1000px) {
+  .dashboard {
+    min-height: 300px;
+    flex:40%
+  }
+
+  .map {
+    flex: 60%
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .main-page {
+    flex-direction: column;
+  }
+
+  .dashboard {
+    min-height: 300px
+  }
+
+  .ids-list {
+    text-align: center;
+  }
 }

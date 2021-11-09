@@ -1,6 +1,9 @@
 const pointInPolygon = require('point-in-polygon');
 const readVehiclesLocationFile = require('../data/helpers');
 
+// @desc    Get all vehicle's locations
+// @route   GET /api/vehicles
+// @access  Public
 exports.getVehiclesLocations = async (req, res, next) => {
     try {
         const vehiclesLocations = readVehiclesLocationFile().map(vehicle => vehicle.location)
@@ -10,11 +13,9 @@ exports.getVehiclesLocations = async (req, res, next) => {
     }
 }
 
-// "location":{
-//     "lat":51.4694976807,
-//     "lng":-0.0493916683,
-//     "bearing":0
-//  },
+// @desc    Get all vehicle ids
+// @route   GET /api/vehicles/ids
+// @access  Public
 exports.getVehiclesIds = async (req, res, next) => {
     try {
         const polygonCoordinates = JSON.parse(req.params.coordinates);
@@ -26,8 +27,6 @@ exports.getVehiclesIds = async (req, res, next) => {
                 ids.push(vehicle.id)
             }
         })
-        console.log(polygonCoordinates);
-        console.log(ids);
         res.status(200).json(ids)
     } catch (error) {
         console.log(error);

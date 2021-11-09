@@ -4,17 +4,18 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { useSelector } from 'react-redux';
 
 const IdList = () => {
-    const selectedVehiclesIds = useSelector((state) => state.map.selectedVehiclesIds);
+    const selectedVehiclesIds = useSelector((state) => state.map.data.selectedVehiclesIds);
+    
     return (
       <div className="ids-list">
-        <ListGroup>
+        <ListGroup variant="flush" numbered>
           {selectedVehiclesIds.map((id, index) => (
             <ListGroup.Item key={index}>
               ID:
               {' '}
               {id}
             </ListGroup.Item>
-))}
+          ))}
         </ListGroup>
       </div>
     );

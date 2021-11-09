@@ -9,14 +9,14 @@ const app = express()
 const port = process.env.PORT || 5000
 const userRouter = require("./routes/vehicle-routes")
 
-
 app.use(cors())
 app.use(express.json())
 app.use(morgan())
+
 // api routes
 app.use("/api/vehicles", userRouter)
-const server = http.createServer(app)
 
+const server = http.createServer(app)
 server.listen(port, () => {
     console.log("SERVER RUNNING - PORT: ", port)
 })
