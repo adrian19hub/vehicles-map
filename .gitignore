@@ -103,3 +103,5 @@ dist
 
 # TernJS port file
 .tern-portnode_modules/
+node_modules/
+node_modules/
