@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-curly-newline */
-/* eslint-disable react/jsx-no-comment-textnodes */
-// eslint-disable-next-line import/no-unresolved
 import React from 'react';
 import ClusterMarker from './ClusterMarker';
 import VehicleMarker from './VehicleMarker';

@@ -1,4 +1,3 @@
-/* eslint-disable padded-blocks */
 import React from 'react';
 import Dashboard from '../../features/Dashboard/Dashboard';
 import MapContainer from '../../features/Map/MapContainer';

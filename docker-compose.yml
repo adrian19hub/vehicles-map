@@ -1,16 +1,14 @@
 version: "3"
 services:
   react-app:
-    image: ajdockerid19/live-vehicle-map-client:1.0
+    image: ajdockerid19/live-vehicle-map-client:1.2
     restart: always
     stdin_open: true
-    links:
-      - api
     ports: 
       - "3001:3000"
 
   api-server:
-    image: ajdockerid19/live-vehicle-map-server:1.5
+    image: ajdockerid19/live-vehicle-map-server:1.7
     restart: always
     ports: 
       - "4000:5000"

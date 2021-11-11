@@ -1,13 +1,3 @@
-/* eslint-disable react/jsx-indent-props */
-/* eslint-disable react/jsx-indent */
-/* eslint-disable react/jsx-closing-tag-location */
-/* eslint-disable indent */
-/* eslint-disable no-tabs */
-/* eslint-disable max-len */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-sparse-arrays */
-/* eslint-disable no-shadow */
-/* eslint-disable no-plusplus */
 import GoogleMapReact from 'google-map-react';
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';

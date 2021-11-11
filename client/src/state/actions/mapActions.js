@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 import { mapActions } from '../slices/mapSlice';
 

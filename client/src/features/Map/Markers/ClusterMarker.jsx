@@ -1,7 +1,3 @@
-/* eslint-disable import/no-cycle */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable react/self-closing-comp */
 import React from 'react';
 import { useSelector } from 'react-redux';
 

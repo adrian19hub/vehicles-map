@@ -11,6 +11,7 @@
 
 body {
   overflow: hidden;
+  font-family: 'Quicksand', sans-serif;
 }
 
 /* Header */
@@ -18,7 +19,7 @@ header {
   background-color:var(--main-color);
   padding: 10px;
 }
-
+  
 header h1 {
   color: var(--secondary-color);
   padding: 20px;
@@ -37,7 +38,6 @@ header h1 {
   flex: 20%;
   display: flex;
   flex-direction: column;
-  overflow:auto;
   background-color:var(--secondary-color)
 } 
 
@@ -57,7 +57,10 @@ header h1 {
   text-align: center;
 }
 
-
+.ids-list {
+  overflow: auto;
+  text-align: center;
+}
 /* Map */
 .map {
   flex: 80%;
@@ -92,7 +95,7 @@ header h1 {
 
 
 /* Media queries */
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1200px) {
   .dashboard {
     min-height: 300px;
     flex:40%
@@ -107,12 +110,13 @@ header h1 {
   .main-page {
     flex-direction: column;
   }
-
   .dashboard {
-    min-height: 300px
+    min-height: 300px;
+    flex:20%
   }
 
-  .ids-list {
-    text-align: center;
+  .map {
+    flex: 80%
   }
 }
+

@@ -1,8 +1,3 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable one-var-declaration-per-line */
-/* eslint-disable one-var */
-/* eslint-disable no-sparse-arrays */
-/* eslint-disable react/no-array-index-key */
 import React, { useEffect, useState, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { mapActions } from '../../state/slices/mapSlice';
